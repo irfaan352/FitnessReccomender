@@ -1,0 +1,20 @@
+form {
+    text-align: center;
+}
+body {
+    background-image:url("download.jpg");
+    background-size: cover;
+}
+input[type="button"]{
+    background-color:palevioletred;
+    color: white;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    border-color: beige;
+  cursor: pointer
+}
+h1,h3 {
+    color:rgb(151, 15, 101);
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+}
