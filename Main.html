@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Weight Loss recommender</title>
+        <link rel="stylesheet" href="custom.css">
+    </head>
+    <script>
+            var Height,Weight,bmi;
+        function calculateBMI() {
+            Height=document.myForm.H.value;
+            var NHeight=Height/100;
+            Weight=document.myForm.W.value;
+            bmi=Weight/(NHeight*NHeight);
+            document.getElementById("bmi").innerHTML=bmi
+            }
+        function recommendWorkout() {
+                calculateBMI();
+                age=document.myForm.A.value;
+                if(bmi&&Height&&Weight&&age!=0&&age>=15){
+                        if (bmi>=25 && bmi<=30) {
+                    document.getElementById("recommend").innerHTML="Daily Walking is good for you!"
+                        }
+                        else if (bmi>30) {
+                            document.getElementById("recommend").innerHTML="You better start HIIT Workout soon!"
+                        }
+                        else if (bmi<18.5) {
+                    document.getElementById("recommend").innerHTML="Gain some weight!"
+                        }       
+                        else {
+                    document.getElementById("recommend").innerHTML="Enjoy being Fit!"
+                        }
+        }
+        else {
+            document.getElementById("recommend").innerHTML="Please provide correct values!"
+        }
+    }
+    </script>
+    <body>
+       <form name="myForm">
+            <h1>WEIGHT LOSS RECOMMENDER</h1>
+            <h3>**Minimum age:15**</h3>
+            <label><b>Enter Height:</b></label>
+            <input type="number" placeholder="in cms" name="H"><br><br>
+            <label><b>Enter Weight:</b></label>
+            <input type="number" placeholder="in kgs" name="W"><br><br>
+            <label><b>Enter Age:</b></label>
+            <input type="number" placeholder="Age" name="A"><br><br>
+            <label><b>BMI:</b></label>
+            <span id="bmi"></span><br><br>
+            <input type="Button" onClick="recommendWorkout()" value="Recommend"><br><br>
+            <span id="recommend"></span>
+        </form>
+       </centre>
+    </body>
+</html>
